@@ -71,19 +71,19 @@ const projectDetails = {
             
             <div class="project-gallery">
                 <div class="gallery-item">
-                    <img src="/portfolio/images/borealis-keystone-1.jpg" alt="Borealis Keystone Electric Bike">
+                    <img src="images/borealis-keystone-1.jpg" alt="Borealis Keystone Electric Bike">
                     <p class="caption">The Borealis Keystone electric fat bike features premium components, winter-ready construction, and electric assist capabilities.</p>
                 </div>
                 <div class="gallery-item">
-                    <img src="/portfolio/images/borealis-keystone-2.jpg" alt="Keystone Bike Prototype Testing">
+                    <img src="images/borealis-keystone-2.jpg" alt="Keystone Bike Prototype Testing">
                     <p class="caption">Testing the prototype on world-famous trails in Fruita, Colorado, gathering valuable rider feedback.</p>
                 </div>
                 <div class="gallery-item">
-                    <img src="/portfolio/images/borealis-keystone-3.jpg" alt="Keystone Production Model">
+                    <img src="images/borealis-keystone-3.jpg" alt="Keystone Production Model">
                     <p class="caption">Final production model featuring Shimano components, dropper post, suspension fork, and powerful brakes for year-round versatility.</p>
                 </div>
                 <div class="gallery-item">
-                    <img src="/portfolio/images/borealis-keystone-4.jpg" alt="Keystone Customer Experience">
+                    <img src="images/borealis-keystone-4.jpg" alt="Keystone Customer Experience">
                     <p class="caption">The Keystone opened up new riding possibilities, increasing our average order value by 24% and receiving enthusiastic customer reviews.</p>
                 </div>
             </div>
@@ -104,15 +104,15 @@ const projectDetails = {
             
             <div class="project-gallery">
                 <div class="gallery-item">
-                    <img src="/portfolio/images/terrene-tires.jpg" alt="Terrene Tires Collection">
+                    <img src="images/terrene-tires.jpg" alt="Terrene Tires Collection">
                     <p class="caption">High-quality tires for fat and plus-sized bikes from the Terrene Tires product line, specializing in various terrain types and conditions.</p>
                 </div>
                 <div class="gallery-item">
-                    <img src="/portfolio/images/terrene-tires-2.jpg" alt="Terrene Tires Brand Identity">
+                    <img src="images/terrene-tires-2.jpg" alt="Terrene Tires Brand Identity">
                     <p class="caption">Post-acquisition brand identity restoration, maintaining Terrene's reputation for quality while integrating with Borealis Fat Bikes.</p>
                 </div>
                 <div class="gallery-item">
-                    <img src="/portfolio/images/terrene-tires-3.jpg" alt="Terrene Tires Marketing">
+                    <img src="images/terrene-tires-3.jpg" alt="Terrene Tires Marketing">
                     <p class="caption">Marketing materials showcasing the specialized application of Terrene Tires products for various cycling disciplines and conditions.</p>
                 </div>
             </div>
@@ -129,19 +129,19 @@ const projectDetails = {
             
             <div class="project-gallery">
                 <div class="gallery-item">
-                    <img src="/portfolio/images/robot-hand-1.jpg" alt="Robot Hand Complete Assembly">
+                    <img src="images/robot-hand-1.jpg" alt="Robot Hand Complete Assembly">
                     <p class="caption">Full mechanical robotic hand assembly design with three-way finger movement configuration using Creo Parametric.</p>
                 </div>
                 <div class="gallery-item">
-                    <img src="/portfolio/images/robot-hand-2.jpg" alt="Linkage Design Detail">
+                    <img src="images/robot-hand-2.jpg" alt="Linkage Design Detail">
                     <p class="caption">Detailed view of the linkage mechanism showing the complex interconnections between components, critical for coordinated movement.</p>
                 </div>
                 <div class="gallery-item">
-                    <img src="/portfolio/images/robot-hand-3.jpg" alt="Assembly Constraints">
+                    <img src="images/robot-hand-3.jpg" alt="Assembly Constraints">
                     <p class="caption">Implementing precise assembly constraints was crucial to ensure proper range of motion while avoiding component interference.</p>
                 </div>
                 <div class="gallery-item">
-                    <img src="/portfolio/images/robot-hand-4.jpg" alt="Aesthetic Design Elements">
+                    <img src="images/robot-hand-4.jpg" alt="Aesthetic Design Elements">
                     <p class="caption">The design balanced mechanical functionality with aesthetic considerations, using surface modeling techniques for a cohesive visual appearance.</p>
                 </div>
             </div>

@@ -1,12 +1,5 @@
-# Ensure static assets like images are served correctly
-[[redirects]]
-  from = "/portfolio/images/*"
-  to = "/portfolio/images/:splat"
-  status = 200
-
-# Redirect all other paths to the portfolio index
+# Serve portfolio from the root
 [[redirects]]
   from = "/*"
-  to = "/portfolio/index.html"
+  to = "/portfolio/:splat"
   status = 200
-  force = false
