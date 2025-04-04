@@ -104,7 +104,7 @@ const projectDetails = {
             
             <div class="project-gallery">
                 <div class="gallery-item">
-                    <img src="images/terrene-tires.jpg" alt="Terrene Tires Collection">
+                    <img src="images/terrene-tires-main.jpg" alt="Terrene Tires Collection">
                     <p class="caption">High-quality tires for fat and plus-sized bikes from the Terrene Tires product line, specializing in various terrain types and conditions.</p>
                 </div>
                 <div class="gallery-item">
