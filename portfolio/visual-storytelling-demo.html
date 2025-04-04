@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Visual Storytelling Preview | David Miller</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/portfolio/css/style.css">
+    <link rel="stylesheet" href="/portfolio/css/enhancements.css">
+    <link rel="stylesheet" href="/portfolio/css/visual-storytelling.css">
+    <style>
+        body {
+            padding-top: 60px;
+        }
+        .demo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .demo-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .demo-section {
+            margin-bottom: 100px;
+            padding: 30px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .demo-title {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        .demo-subtitle {
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            color: var(--secondary);
+        }
+        .demo-description {
+            margin-bottom: 30px;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+        .demo-note {
+            background: var(--accent-light);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 40px;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+        .action-button {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+        .action-button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <div class="demo-header">
+            <h1 class="demo-title">Advanced Visual Storytelling</h1>
+            <p class="demo-subtitle">Preview of enhanced visual elements for David Miller's portfolio</p>
+        </div>
+        
+        <!-- 1. Interactive Timeline -->
+        <div class="demo-section">
+            <h2>1. Interactive Timeline</h2>
+            <p class="demo-description">A horizontal, interactive timeline that showcases David's career journey with animated progression. Users can navigate through the timeline to explore different stages of his career.</p>
+            
+            <div class="timeline-experience-wrapper" style="display: flex; gap: 30px; margin-bottom: 50px;">
+                <div class="timeline-container" style="flex: 1;">
+                    <div class="timeline-track">
+                    <!-- Order from oldest to newest (JavaScript will select the most recent node) -->
+                    <div class="timeline-node" id="node-2014">
+                        <div class="timeline-node-dot"></div>
+                        <div class="timeline-node-year">2014</div>
+                        <div class="timeline-node-content">
+                            <div class="timeline-node-title">Infantry Team Leader</div>
+                            <div class="timeline-node-subtitle">US Army</div>
+                            <p class="timeline-node-description">Led and trained soldiers, executed tactical missions, and maintained combat readiness.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-node" id="node-2016">
+                        <div class="timeline-node-dot"></div>
+                        <div class="timeline-node-year">2016</div>
+                        <div class="timeline-node-content">
+                            <div class="timeline-node-title">Senior Infantry Leader</div>
+                            <div class="timeline-node-subtitle">US Army</div>
+                            <p class="timeline-node-description">Promoted to senior leadership position, coordinating multiple teams in complex operations.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-node" id="node-2017">
+                        <div class="timeline-node-dot"></div>
+                        <div class="timeline-node-year">2017</div>
+                        <div class="timeline-node-content">
+                            <div class="timeline-node-title">Sales Representative</div>
+                            <div class="timeline-node-subtitle">Mountain Equipment Recyclers</div>
+                            <p class="timeline-node-description">Provided expert product guidance and managed sales operations for outdoor gear and apparel.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-node" id="node-2019">
+                        <div class="timeline-node-dot"></div>
+                        <div class="timeline-node-year">2019</div>
+                        <div class="timeline-node-content">
+                            <div class="timeline-node-title">Product Manager</div>
+                            <div class="timeline-node-subtitle">Borealis Fat Bikes</div>
+                            <p class="timeline-node-description">Drove a 6-8% YoY increase in gross margin through pricing optimization and strategic cost reductions.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-node" id="node-2021">
+                        <div class="timeline-node-dot"></div>
+                        <div class="timeline-node-year">2021</div>
+                        <div class="timeline-node-content">
+                            <div class="timeline-node-title">Keystone E-Bike Launch</div>
+                            <div class="timeline-node-subtitle">Borealis Fat Bikes</div>
+                            <p class="timeline-node-description">Managed product launch resulting in 24% increase in Average Order Value across all sales channels.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-node" id="node-2023">
+                        <div class="timeline-node-dot"></div>
+                        <div class="timeline-node-year">2023</div>
+                        <div class="timeline-node-content">
+                            <div class="timeline-node-title">Terrene Tires Acquisition</div>
+                            <div class="timeline-node-subtitle">Borealis Fat Bikes</div>
+                            <p class="timeline-node-description">Worked alongside CEO during acquisition, gaining firsthand experience in due diligence and business integration.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-node most-recent" id="node-2025">
+                        <div class="timeline-node-dot"></div>
+                        <div class="timeline-node-year">2025</div>
+                        <div class="timeline-node-content">
+                            <div class="timeline-node-title">VP of Sales / Product Manager</div>
+                            <div class="timeline-node-subtitle">Borealis Fat Bikes / Terrene Tires</div>
+                            <p class="timeline-node-description">Directed multi-channel sales strategy while managing product development across bike and tire product lines.</p>
+                        </div>
+                    </div>
+                    </div>
+                    
+                    <div class="timeline-navigation">
+                        <button class="timeline-nav-btn" id="timelinePrev">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="timeline-nav-btn" id="timelineNext">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Detailed Experience Content Panel -->
+                <div class="experience-detail-panel" style="flex: 1; background: white; border-radius: 15px; padding: 25px; box-shadow: var(--shadow-md); max-height: 500px; overflow-y: auto;">
+                    <div class="detail-panel-content" id="experience-detail-2025" style="display: block;">
+                        <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                            <div style="width: 60px; height: 60px; overflow: hidden; border-radius: 50%; margin-right: 15px;">
+                                <img src="/portfolio/images/borealis.png" alt="Borealis Fat Bikes" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div>
+                                <h3 style="margin: 0; font-size: 1.4em;">VP of Sales / Product Manager</h3>
+                                <h4 style="margin: 5px 0; color: var(--secondary); font-weight: 500;">Borealis Fat Bikes / Terrene Tires</h4>
+                                <p style="margin: 0; font-size: 0.9em; color: var(--gray-500);"><i class="fas fa-map-marker-alt"></i> Colorado Springs, Colorado · Hybrid <span style="margin-left: 5px; padding: 2px 8px; background-color: rgba(101, 220, 155, 0.2); border-radius: 12px; font-size: 0.85em; color: #43a047;">2019 - Present</span></p>
+                            </div>
+                        </div>
+                        <div style="padding: 0 0 15px 15px;">
+                            <div style="margin-bottom: 12px;">
+                                <p style="margin: 0 0 6px 0; display: flex; align-items: flex-start;"><span style="color: var(--primary); margin-right: 10px; font-size: 1.2em;">•</span> Directed a multi-channel sales strategy that met or surpassed annual growth targets for revenue and net profit determined by the CEO of both companies.</p>
+                            </div>
+                            <div style="margin-bottom: 12px;">
+                                <p style="margin: 0 0 6px 0; display: flex; align-items: flex-start;"><span style="color: var(--primary); margin-right: 10px; font-size: 1.2em;">•</span> Led all sales initiatives, optimized operations, and built a high-performing team—driving record YoY revenue growth of 50% and 75% in the company's best-performing years.</p>
+                            </div>
+                            <div style="margin-bottom: 12px;">
+                                <p style="margin: 0 0 6px 0; display: flex; align-items: flex-start;"><span style="color: var(--primary); margin-right: 10px; font-size: 1.2em;">•</span> Drove a 6-8% YoY increase in gross margin over three consecutive years through pricing optimization and cost reductions; later navigated a market-driven decline, implementing strategic adjustments to mitigate impact.</p>
+                            </div>
+                            <div style="margin-bottom: 12px;">
+                                <p style="margin: 0 0 6px 0; display: flex; align-items: flex-start;"><span style="color: var(--primary); margin-right: 10px; font-size: 1.2em;">•</span> Managed the product launch and sale of the Keystone Electric Bike resulting in an overall AOV increase of 24%.</p>
+                            </div>
+                            <div style="margin-bottom: 12px;">
+                                <p style="margin: 0 0 6px 0; display: flex; align-items: flex-start;"><span style="color: var(--primary); margin-right: 10px; font-size: 1.2em;">•</span> Represented both companies in sales while building and maintaining strong client relationships across multiple channels.</p>
+                            </div>
+                            <div style="margin-bottom: 12px;">
+                                <p style="margin: 0 0 6px 0; display: flex; align-items: flex-start;"><span style="color: var(--primary); margin-right: 10px; font-size: 1.2em;">•</span> Worked alongside the CEO during the acquisition of Terrene Tires, gaining firsthand experience in due diligence, deal structuring, and strategic business integration.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="detail-panel-content" id="experience-detail-2017" style="display: none;">
+                        <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                            <div style="width: 60px; height: 60px; overflow: hidden; border-radius: 50%; margin-right: 15px;">
+                                <img src="/portfolio/images/mountain-equipment-recyclers.png" alt="Mountain Equipment Recyclers" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div>
+                                <h3 style="margin: 0; font-size: 1.4em;">Sales Representative</h3>
+                                <h4 style="margin: 5px 0; color: var(--secondary); font-weight: 500;">Mountain Equipment Recyclers</h4>
+                                <p style="margin: 0; font-size: 0.9em; color: var(--gray-500);"><i class="fas fa-map-marker-alt"></i> Colorado Springs, Colorado <span style="margin-left: 5px; padding: 2px 8px; background-color: rgba(101, 220, 155, 0.2); border-radius: 12px; font-size: 0.85em; color: #43a047;">2017 - 2019</span></p>
+                            </div>
+                        </div>
+                        <div style="padding: 0 0 15px 15px;">
+                            <div style="margin-bottom: 12px;">
+                                <p style="margin: 0 0 6px 0; display: flex; align-items: flex-start;"><span style="color: var(--primary); margin-right: 10px; font-size: 1.2em;">•</span> Assisted customers in finding quality outdoor gear and apparel from a wide selection of consigned items.</p>
+                            </div>
+                            <div style="margin-bottom: 12px;">
+                                <p style="margin: 0 0 6px 0; display: flex; align-items: flex-start;"><span style="color: var(--primary); margin-right: 10px; font-size: 1.2em;">•</span> Educated customers on gear functionality, fit, and best use for activities like hiking, biking, skiing, and climbing.</p>
+                            </div>
+                            <div style="margin-bottom: 12px;">
+                                <p style="margin: 0 0 6px 0; display: flex; align-items: flex-start;"><span style="color: var(--primary); margin-right: 10px; font-size: 1.2em;">•</span> Processed consignments, inspected gear for quality, and priced items competitively based on market demand.</p>
+                            </div>
+                            <div style="margin-bottom: 12px;">
+                                <p style="margin: 0 0 6px 0; display: flex; align-items: flex-start;"><span style="color: var(--primary); margin-right: 10px; font-size: 1.2em;">•</span> Maintained an organized and welcoming retail space to enhance the shopping experience.</p>
+                            </div>
+                            <div style="margin-bottom: 12px;">
+                                <p style="margin: 0 0 6px 0; display: flex; align-items: flex-start;"><span style="color: var(--primary); margin-right: 10px; font-size: 1.2em;">•</span> Operated point-of-sale systems, handled transactions, and provided excellent customer service.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="detail-panel-content" id="experience-detail-2019" style="display: none;">
+                        <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                            <div style="width: 60px; height: 60px; overflow: hidden; border-radius: 50%; margin-right: 15px;">
+                                <img src="/portfolio/images/borealis.png" alt="Borealis Fat Bikes" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div>
+                                <h3 style="margin: 0; font-size: 1.4em;">Product Manager</h3>
+                                <h4 style="margin: 5px 0; color: var(--secondary); font-weight: 500;">Borealis Fat Bikes</h4>
+                                <p style="margin: 0; font-size: 0.9em; color: var(--gray-500);"><i class="fas fa-map-marker-alt"></i> Colorado Springs, Colorado <span style="margin-left: 5px; padding: 2px 8px; background-color: rgba(101, 220, 155, 0.2); border-radius: 12px; font-size: 0.85em; color: #43a047;">2019 - 2021</span></p>
+                            </div>
+                        </div>
+                        <div style="padding: 0 0 15px 15px;">
+                            <div style="margin-bottom: 12px;">
+                                <p style="margin: 0 0 6px 0; display: flex; align-items: flex-start;"><span style="color: var(--primary); margin-right: 10px; font-size: 1.2em;">•</span> Drove a 6-8% YoY increase in gross margin over three consecutive years through pricing optimization and strategic cost reductions.</p>
+                            </div>
+                            <div style="margin-bottom: 12px;">
+                                <p style="margin: 0 0 6px 0; display: flex; align-items: flex-start;"><span style="color: var(--primary); margin-right: 10px; font-size: 1.2em;">•</span> Managed relationships with vendors and manufacturers across Asia to ensure quality control and timely production.</p>
+                            </div>
+                            <div style="margin-bottom: 12px;">
+                                <p style="margin: 0 0 6px 0; display: flex; align-items: flex-start;"><span style="color: var(--primary); margin-right: 10px; font-size: 1.2em;">•</span> Collaborated with engineering team to develop and refine product specifications for fat bikes and components.</p>
+                            </div>
+                            <div style="margin-bottom: 12px;">
+                                <p style="margin: 0 0 6px 0; display: flex; align-items: flex-start;"><span style="color: var(--primary); margin-right: 10px; font-size: 1.2em;">•</span> Conducted market research and competitive analysis to identify opportunities for product differentiation and innovation.</p>
+                            </div>
+                            <div style="margin-bottom: 12px;">
+                                <p style="margin: 0 0 6px 0; display: flex; align-items: flex-start;"><span style="color: var(--primary); margin-right: 10px; font-size: 1.2em;">•</span> Created detailed product roadmaps and established KPIs to track product performance and market acceptance.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-panel-content" id="experience-detail-2021" style="display: none;">
+                        <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                            <div style="width: 60px; height: 60px; overflow: hidden; border-radius: 50%; margin-right: 15px;">
+                                <img src="/portfolio/images/borealis.png" alt="Borealis Fat Bikes" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div>
+                                <h3 style="margin: 0; font-size: 1.4em;">Keystone E-Bike Launch</h3>
+                                <h4 style="margin: 5px 0; color: var(--secondary); font-weight: 500;">Borealis Fat Bikes</h4>
+                                <p style="margin: 0; font-size: 0.9em; color: var(--gray-500);"><i class="fas fa-calendar-alt"></i> <span style="margin-left: 5px; padding: 2px 8px; background-color: rgba(101, 220, 155, 0.2); border-radius: 12px; font-size: 0.85em; color: #43a047;">2021 Product Launch</span></p>
+                            </div>
+                        </div>
+                        <div style="margin: 10px 0 20px 0; border-radius: 8px; overflow: hidden;">
+                            <img src="/portfolio/images/keystone-ebike.jpg" alt="Keystone E-Bike" style="width: 100%; height: auto;">
+                            <p style="margin: 5px 0 0 0; font-size: 0.85em; color: var(--gray-500); font-style: italic;">The Keystone Electric Fat Bike - Borealis' flagship e-bike model.</p>
+                        </div>
+                        <div style="padding: 0 0 15px 15px;">
+                            <div style="margin-bottom: 12px;">
+                                <p style="margin: 0 0 6px 0; display: flex; align-items: flex-start;"><span style="color: var(--primary); margin-right: 10px; font-size: 1.2em;">•</span> Led the product development and launch of Borealis' first electric fat bike model, the Keystone.</p>
+                            </div>
+                            <div style="margin-bottom: 12px;">
+                                <p style="margin: 0 0 6px 0; display: flex; align-items: flex-start;"><span style="color: var(--primary); margin-right: 10px; font-size: 1.2em;">•</span> Coordinated with engineering, marketing, and sales teams to create a comprehensive launch strategy.</p>
+                            </div>
+                            <div style="margin-bottom: 12px;">
+                                <p style="margin: 0 0 6px 0; display: flex; align-items: flex-start;"><span style="color: var(--primary); margin-right: 10px; font-size: 1.2em;">•</span> Achieved a 24% increase in Average Order Value (AOV) across all sales channels following launch.</p>
+                            </div>
+                            <div style="margin-bottom: 12px;">
+                                <p style="margin: 0 0 6px 0; display: flex; align-items: flex-start;"><span style="color: var(--primary); margin-right: 10px; font-size: 1.2em;">•</span> Negotiated with component suppliers during global supply chain disruptions to maintain production timelines.</p>
+                            </div>
+                            <div style="margin-bottom: 12px;">
+                                <p style="margin: 0 0 6px 0; display: flex; align-items: flex-start;"><span style="color: var(--primary); margin-right: 10px; font-size: 1.2em;">•</span> Created dealer training programs and sales materials to support the launch in bike shops nationwide.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-panel-content" id="experience-detail-2014" style="display: none;">
+                        <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                            <div style="width: 60px; height: 60px; overflow: hidden; border-radius: 50%; margin-right: 15px;">
+                                <img src="/portfolio/images/army.png" alt="US Army" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div>
+                                <h3 style="margin: 0; font-size: 1.4em;">Infantry Team Leader</h3>
+                                <h4 style="margin: 5px 0; color: var(--secondary); font-weight: 500;">US Army</h4>
+                                <p style="margin: 0; font-size: 0.9em; color: var(--gray-500);"><i class="fas fa-map-marker-alt"></i> Fort Carson, Colorado <span style="margin-left: 5px; padding: 2px 8px; background-color: rgba(101, 220, 155, 0.2); border-radius: 12px; font-size: 0.85em; color: #43a047;">2014 - 2017</span></p>
+                            </div>
+                        </div>
+                        <div style="margin: 10px 0 20px 0; border-radius: 8px; overflow: hidden;">
+                            <img src="/portfolio/images/infantry-team-leader.jpg" alt="Infantry Team Leader" style="width: 100%; height: auto;">
+                            <p style="margin: 5px 0 0 0; font-size: 0.85em; color: var(--gray-500); font-style: italic;">Infantry Team Leader operating an M240B Machine Gun during a live fire exercise.</p>
+                        </div>
+                        <div style="padding: 0 0 15px 15px;">
+                            <div style="margin-bottom: 12px;">
+                                <p style="margin: 0 0 6px 0; display: flex; align-items: flex-start;"><span style="color: var(--primary); margin-right: 10px; font-size: 1.2em;">•</span> Led and trained soldiers – Directed and mentored a fire team, ensuring they were physically and mentally prepared for combat. Provided tactical training and enforced discipline.</p>
+                            </div>
+                            <div style="margin-bottom: 12px;">
+                                <p style="margin: 0 0 6px 0; display: flex; align-items: flex-start;"><span style="color: var(--primary); margin-right: 10px; font-size: 1.2em;">•</span> Planned and executed missions – Developed and executed tactical plans, leading small-unit movements, assaults, and defensive operations in coordination with squad leaders.</p>
+                            </div>
+                            <div style="margin-bottom: 12px;">
+                                <p style="margin: 0 0 6px 0; display: flex; align-items: flex-start;"><span style="color: var(--primary); margin-right: 10px; font-size: 1.2em;">•</span> Maintained equipment and readiness – Ensured weapons, gear, and communication systems were properly maintained and ready for deployment while managing logistics for team effectiveness.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="demo-note">
+                <strong>How it works:</strong> Click on any dot in the timeline to view the details of that point in David's career. Use the navigation buttons to move left and right through the timeline. Each node provides a snapshot of key achievements during that period.
+            </div>
+        </div>
+        
+        <!-- 2. Achievement Metrics Cards -->
+        <div class="demo-section">
+            <h2>2. Achievement Metrics Cards</h2>
+            <p class="demo-description">Visually engaging cards highlighting key metrics from David's career with subtle animations that engage viewers and emphasize his achievements.</p>
+            
+            <div class="metrics-container">
+                <div class="metric-card">
+                    <i class="fas fa-chart-line metric-icon"></i>
+                    <h3 class="metric-value" data-value="75" data-suffix="%">75%</h3>
+                    <h4 class="metric-title">YoY Revenue Growth</h4>
+                    <p class="metric-description">Led sales initiatives driving record year-over-year revenue growth in Borealis' best performing year</p>
+                </div>
+                
+                <div class="metric-card">
+                    <i class="fas fa-dollar-sign metric-icon"></i>
+                    <h3 class="metric-value" data-value="5" data-prefix="$" data-suffix="M">$5M</h3>
+                    <h4 class="metric-title">Annual Revenue</h4>
+                    <p class="metric-description">Achieved target revenue through strategic multi-channel sales approach across direct, wholesale, and international markets</p>
+                </div>
+                
+                <div class="metric-card">
+                    <i class="fas fa-globe-americas metric-icon"></i>
+                    <h3 class="metric-value" data-value="15" data-suffix="+">15+</h3>
+                    <h4 class="metric-title">International Markets</h4>
+                    <p class="metric-description">Built global distribution network spanning countries across North America, Europe, and Asia</p>
+                </div>
+                
+                <div class="metric-card">
+                    <i class="fas fa-shopping-cart metric-icon"></i>
+                    <h3 class="metric-value" data-value="24" data-suffix="%">24%</h3>
+                    <h4 class="metric-title">AOV Increase</h4>
+                    <p class="metric-description">Boosted Average Order Value through successful launch and sales strategy for the Keystone Electric Bike</p>
+                </div>
+            </div>
+            
+            <div class="demo-note">
+                <strong>How it works:</strong> When scrolled into view, the numbers animate from zero to their final value, drawing attention to David's key accomplishments. Each card features a relevant icon and concise description of the achievement.
+            </div>
+        </div>
+        
+        <!-- 3. Project Relationship Diagram -->
+        <div class="demo-section">
+            <h2>3. Project Relationship Diagram</h2>
+            <p class="demo-description">An interactive visualization showing how David's projects connect to various skills and achievements, demonstrating the breadth and interconnectedness of his experience.</p>
+            
+            <div class="relationship-container">
+                <div class="relationship-legend">
+                    <div class="legend-item">
+                        <div class="legend-color legend-projects"></div>
+                        <span class="legend-text">Projects</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color legend-skills"></div>
+                        <span class="legend-text">Skills</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color legend-achievements"></div>
+                        <span class="legend-text">Achievements</span>
+                    </div>
+                </div>
+                
+                <!-- Project Nodes -->
+                <div id="keystone" class="node node-project node-large" style="top: 150px; left: 150px;" data-connects-to="sales-strategy, product-dev, ecommerce, aov-increase, cad-cam">
+                    <div class="node-tooltip">Managed from concept to market launch, becoming Borealis' top revenue generator</div>
+                    <div class="node-text">Keystone E-Bike</div>
+                </div>
+                
+                <div id="terrene" class="node node-project node-large" style="top: 280px; left: 580px;" data-connects-to="sales-strategy, international, b2b-sales, product-dev, margins">
+                    <div class="node-tooltip">Oversaw acquisition and integration, creating new revenue streams</div>
+                    <div class="node-text">Terrene Tires</div>
+                </div>
+                
+                <div id="robothand" class="node node-project node-large" style="top: 400px; left: 280px;" data-connects-to="cad-cam, product-dev, engineering">
+                    <div class="node-tooltip">Created prototype using advanced 3D printing and engineering principles</div>
+                    <div class="node-text">Robot Hand</div>
+                </div>
+                
+                <!-- Skill Nodes -->
+                <div id="sales-strategy" class="node node-skill node-medium" style="top: 80px; left: 350px;" data-connects-to="aov-increase, revenue-growth, international, margins">
+                    <div class="node-tooltip">10/10 - Multi-channel strategy across direct, wholesale, and international</div>
+                    <div class="node-text">Sales Strategy</div>
+                </div>
+                
+                <div id="product-dev" class="node node-skill node-medium" style="top: 280px; left: 380px;" data-connects-to="keystone, terrene, robothand, engineering">
+                    <div class="node-tooltip">9/10 - Product development from concept to production</div>
+                    <div class="node-text">Product Development</div>
+                </div>
+                
+                <div id="cad-cam" class="node node-skill node-medium" style="top: 240px; left: 200px;" data-connects-to="keystone, robothand, engineering">
+                    <div class="node-tooltip">9/10 - Technical design using advanced CAD/CAM software</div>
+                    <div class="node-text">CAD/CAM</div>
+                </div>
+                
+                <div id="ecommerce" class="node node-skill node-small" style="top: 180px; left: 480px;" data-connects-to="sales-strategy, aov-increase, revenue-growth">
+                    <div class="node-tooltip">9/10 - Direct-to-consumer sales channels</div>
+                    <div class="node-text">eCommerce</div>
+                </div>
+                
+                <div id="b2b-sales" class="node node-skill node-small" style="top: 380px; left: 480px;" data-connects-to="sales-strategy, terrene, international">
+                    <div class="node-tooltip">9/10 - Wholesale and dealer relationship management</div>
+                    <div class="node-text">B2B Sales</div>
+                </div>
+                
+                <div id="engineering" class="node node-skill node-small" style="top: 320px; left: 80px;" data-connects-to="product-dev, robothand, cad-cam">
+                    <div class="node-tooltip">9/10 - Applied mechanical engineering principles</div>
+                    <div class="node-text">Engineering</div>
+                </div>
+                
+                <!-- Achievement Nodes -->
+                <div id="revenue-growth" class="node node-achievement node-medium" style="top: 60px; left: 520px;" data-connects-to="sales-strategy, ecommerce">
+                    <div class="node-tooltip">75% year-over-year revenue growth in best performing year</div>
+                    <div class="node-text">Revenue Growth</div>
+                </div>
+                
+                <div id="international" class="node node-achievement node-medium" style="top: 440px; left: 380px;" data-connects-to="sales-strategy, b2b-sales, terrene">
+                    <div class="node-tooltip">Distribution network spanning 15+ countries globally</div>
+                    <div class="node-text">Global Reach</div>
+                </div>
+                
+                <div id="aov-increase" class="node node-achievement node-small" style="top: 130px; left: 300px;" data-connects-to="keystone, sales-strategy, ecommerce">
+                    <div class="node-tooltip">24% increase in Average Order Value from Keystone launch</div>
+                    <div class="node-text">AOV +24%</div>
+                </div>
+                
+                <div id="margins" class="node node-achievement node-small" style="top: 380px; left: 580px;" data-connects-to="terrene, sales-strategy">
+                    <div class="node-tooltip">6-8% YoY increase in gross margin over three consecutive years</div>
+                    <div class="node-text">Margin Growth</div>
+                </div>
+            </div>
+            
+            <div class="demo-note">
+                <strong>How it works:</strong> Hover over any node to see its description and highlight its connections. The diagram visually demonstrates how David's projects relate to his skills and achievements, providing a comprehensive view of his professional capabilities.
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 50px; margin-bottom: 100px;">
+            <p style="margin-bottom: 20px;">This preview lets you review these advanced visual storytelling elements before integrating them into the main portfolio.</p>
+            <a href="/portfolio/index.html" class="action-button">Return to Portfolio</a>
+        </div>
+    </div>
+    
+    <script src="/portfolio/js/visual-storytelling.js"></script>
+</body>
+</html>

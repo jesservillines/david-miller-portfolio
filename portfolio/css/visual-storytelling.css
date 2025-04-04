@@ -1,0 +1,436 @@
+/* Advanced Visual Storytelling Elements
+-------------------------------------------------- */
+
+/* 1. INTERACTIVE TIMELINE
+-------------------------------------------------- */
+.timeline-container {
+    position: relative;
+    width: 100%;
+    margin: 80px 0;
+    overflow: hidden;
+    padding-bottom: 150px; /* Add more space for the content boxes */
+}
+
+.timeline-track {
+    display: flex;
+    width: max-content;
+    position: relative;
+    padding: 30px 0;
+    transition: transform 0.5s ease;
+}
+
+.timeline-track::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+    transform: translateY(-50%);
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(37, 99, 235, 0.2);
+}
+
+.timeline-node {
+    position: relative;
+    padding: 0 20px;
+    cursor: pointer;
+    min-width: 200px;
+    margin: 0 50px;
+}
+
+.timeline-node:first-child {
+    margin-left: 20px;
+}
+
+.timeline-node:last-child {
+    margin-right: 20px;
+}
+
+.timeline-node-dot {
+    width: 20px;
+    height: 20px;
+    background-color: var(--primary);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.timeline-node.active .timeline-node-dot {
+    width: 28px;
+    height: 28px;
+    background-color: var(--accent);
+    box-shadow: 0 0 15px var(--accent);
+}
+
+.timeline-node-year {
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 600;
+    color: var(--primary);
+    transition: all 0.3s ease;
+}
+
+.timeline-node.active .timeline-node-year {
+    font-size: 1.1em;
+    color: var(--accent);
+}
+
+.timeline-node-content {
+    position: absolute;
+    top: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: var(--shadow-md);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.timeline-node.active .timeline-node-content {
+    opacity: 1;
+    visibility: visible;
+    top: 40px;
+    pointer-events: auto;
+    min-height: 120px;
+}
+
+.timeline-node-title {
+    font-weight: 600;
+    font-size: 1.1em;
+    margin-bottom: 5px;
+    color: var(--dark);
+}
+
+.timeline-node-subtitle {
+    font-size: 0.9em;
+    color: var(--secondary);
+    margin-bottom: 10px;
+}
+
+.timeline-node-description {
+    font-size: 0.9em;
+    line-height: 1.6;
+    color: var(--secondary);
+    margin-top: 8px;
+}
+
+.timeline-navigation {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.timeline-nav-btn {
+    background: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.timeline-nav-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.timeline-nav-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* 2. ACHIEVEMENT METRICS CARDS
+-------------------------------------------------- */
+.metrics-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 50px 0;
+}
+
+.metric-card {
+    flex: 1 1 250px;
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.metric-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+}
+
+.metric-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+}
+
+.metric-value {
+    font-size: 2.5em;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 10px;
+    position: relative;
+    display: inline-block;
+}
+
+.metric-value::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 25%;
+    width: 50%;
+    height: 3px;
+    background: var(--accent-light);
+    border-radius: 3px;
+}
+
+.metric-title {
+    font-size: 1.1em;
+    color: var(--secondary);
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.metric-description {
+    font-size: 0.9em;
+    color: var(--gray-500);
+    line-height: 1.6;
+}
+
+.metric-icon {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    font-size: 7em;
+    color: var(--gray-100);
+    opacity: 0.5;
+    transition: all 0.4s ease;
+}
+
+.metric-card:hover .metric-icon {
+    transform: rotate(15deg) scale(1.1);
+}
+
+/* 3. PROJECT RELATIONSHIP DIAGRAM
+-------------------------------------------------- */
+.relationship-container {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    margin: 70px 0;
+    background: var(--light);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.relationship-legend {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    z-index: 10;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.legend-color {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.legend-projects {
+    background-color: var(--primary);
+}
+
+.legend-skills {
+    background-color: var(--accent);
+}
+
+.legend-achievements {
+    background-color: #f59e0b;
+}
+
+.legend-text {
+    font-size: 0.8em;
+    color: var(--secondary);
+}
+
+.relationship-canvas {
+    width: 100%;
+    height: 100%;
+}
+
+.node {
+    position: absolute;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+}
+
+.node:hover {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-md);
+    z-index: 10;
+}
+
+.node-project {
+    background-color: var(--primary);
+    color: white;
+}
+
+.node-skill {
+    background-color: var(--accent);
+    color: white;
+}
+
+.node-achievement {
+    background-color: #f59e0b;
+    color: white;
+}
+
+.node-large {
+    width: 100px;
+    height: 100px;
+    font-size: 0.9em;
+    font-weight: 600;
+}
+
+.node-medium {
+    width: 80px;
+    height: 80px;
+    font-size: 0.8em;
+}
+
+.node-small {
+    width: 60px;
+    height: 60px;
+    font-size: 0.7em;
+}
+
+.node-text {
+    text-align: center;
+    padding: 10px;
+    max-width: 90%;
+}
+
+.node-tooltip {
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--dark);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 0.8em;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    width: max-content;
+    max-width: 200px;
+    z-index: 20;
+}
+
+.node-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 8px;
+    border-style: solid;
+    border-color: var(--dark) transparent transparent transparent;
+}
+
+.node:hover .node-tooltip {
+    opacity: 1;
+    visibility: visible;
+    bottom: 110%;
+}
+
+.connection {
+    position: absolute;
+    background-color: rgba(100, 116, 139, 0.2);
+    transform-origin: 0 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .timeline-node {
+        min-width: 150px;
+        margin: 0 30px;
+    }
+    
+    .metric-card {
+        flex-basis: 100%;
+    }
+    
+    .relationship-container {
+        height: 400px;
+    }
+    
+    .node-large {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .node-medium {
+        width: 55px;
+        height: 55px;
+    }
+    
+    .node-small {
+        width: 45px;
+        height: 45px;
+    }
+}
