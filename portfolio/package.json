@@ -1,0 +1,21 @@
+{
+  "name": "david-miller-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio website for David Miller - Sales Leader & Product Manager",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve",
+    "build": "echo 'No build step required'"
+  },
+  "dependencies": {
+    "serve": "^14.2.0"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "portfolio",
+    "sales",
+    "product-management"
+  ],
+  "author": "David Miller",
+  "license": "MIT"
+}
