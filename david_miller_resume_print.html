@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         /* Print-optimized resume styling with download button */
-        
         .download-container {
             position: fixed;
             top: 20px;
@@ -45,203 +44,284 @@
             }
         }
         
-        /* Print-optimized resume styling */
+        /* Modern two-column resume styling */
         :root {
             --primary: #2563eb;
+            --primary-dark: #1d4ed8;
             --secondary: #475569;
-            --dark: #0f172a;
-            --light: #f8fafc;
             --accent: #10b981;
+            --light-bg: #f8fafc;
+            --text: #0f172a;
+            --muted: #64748b;
+            --border: #e2e8f0;
         }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+            font-family: 'Inter', sans-serif;
         }
         
         body {
-            color: var(--dark);
-            line-height: 1.7;
-            font-size: 12pt;
+            color: var(--text);
+            line-height: 1.5;
+            font-size: 10pt;
             background-color: white;
             width: 8.5in;
-            height: 11in;
             margin: 0 auto;
-            padding: 0.5in;
+            padding: 0.4in;
         }
         
-        header {
-            padding-bottom: 1rem;
-            border-bottom: 2px solid var(--primary);
-            margin-bottom: 1rem;
-        }
-        
-        .header-content {
+        /* Two-column layout */
+        .resume-container {
             display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
+            gap: 0.5in;
         }
         
-        h1 {
-            color: var(--primary);
-            font-size: 24pt;
+        /* Left sidebar column */
+        .sidebar {
+            width: 2.2in;
+        }
+        
+        /* Main content column */
+        .main-content {
+            flex: 1;
+        }
+        
+        /* Header styling with photo */
+        .header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 0.3in;
+        }
+        
+        .photo-container {
+            width: 1.5in;
+            height: 1.5in;
+            overflow: hidden;
+            border-radius: 50%;
+            border: 3px solid var(--primary);
+            margin-bottom: 0.2in;
+        }
+        
+        .photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .name {
+            font-size: 16pt;
             font-weight: 700;
-            margin-bottom: 0.25rem;
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 0.05in;
+            line-height: 1.2;
         }
         
         .title {
+            font-size: 12pt;
+            font-weight: 500;
             color: var(--secondary);
-            font-size: 14pt;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
+            text-align: center;
+            margin-bottom: 0.15in;
         }
         
         .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 0.25rem;
-            text-align: right;
-            font-size: 10pt;
-            color: var(--secondary);
+            width: 100%;
         }
         
         .contact-item {
             display: flex;
             align-items: center;
-            justify-content: flex-end;
-            gap: 0.5rem;
+            margin-bottom: 0.08in;
+            font-size: 8pt;
+            color: var(--text);
         }
         
         .contact-item i {
+            width: 0.25in;
             color: var(--primary);
+            font-size: 10pt;
         }
         
-        h2 {
-            font-size: 14pt;
-            margin: 1rem 0 0.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            border-bottom: 1px solid #e2e8f0;
-            padding-bottom: 0.25rem;
-        }
-        
-        h3 {
-            font-size: 12pt;
-            margin: 0.5rem 0 0.25rem;
-            color: var(--dark);
-            font-weight: 700;
-        }
-        
+        /* Section styling */
         .section {
-            margin-bottom: 1rem;
+            margin-bottom: 0.25in;
         }
         
-        .about {
-            margin-bottom: 1rem;
-            line-height: 1.6;
-            font-size: 10pt;
-        }
-        
-        .experience-item {
-            margin-bottom: 1.25rem;
-        }
-        
-        .job-title {
-            font-weight: 700;
-            color: var(--dark);
+        .section-title {
             font-size: 12pt;
-        }
-        
-        .company {
+            font-weight: 700;
             color: var(--primary);
+            margin-bottom: 0.12in;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 0.05in;
+        }
+        
+        /* Skills section */
+        .skill-category {
+            margin-bottom: 0.15in;
+        }
+        
+        .skill-category-title {
             font-weight: 600;
-            display: inline-block;
-        }
-        
-        .period, .location {
+            font-size: 10pt;
+            margin-bottom: 0.05in;
             color: var(--secondary);
-            font-size: 10pt;
-            margin-bottom: 0.25rem;
         }
         
-        ul {
-            list-style-type: disc;
-            margin: 0.5rem 0;
-            padding-left: 1.25rem;
-            font-size: 10pt;
-        }
-        
-        li {
-            margin-bottom: 0.25rem;
-        }
-        
-        .skills {
+        .skill-item {
             display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 0.5rem;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.05in;
         }
         
-        .skill {
-            background-color: #f1f5f9;
-            color: var(--accent);
-            padding: 0.2rem 0.5rem;
-            border-radius: 4px;
+        .skill-name {
             font-size: 9pt;
-            font-weight: 500;
-            border: 1px solid #e2e8f0;
         }
         
+        .skill-level {
+            display: flex;
+            gap: 2px;
+        }
+        
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: var(--border);
+        }
+        
+        .dot.filled {
+            background-color: var(--primary);
+        }
+        
+        /* Languages */
+        .language-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.05in;
+        }
+        
+        /* Education section */
         .education-item {
-            margin-bottom: 1rem;
+            margin-bottom: 0.15in;
         }
         
         .degree {
             font-weight: 600;
-            margin-bottom: 0.25rem;
-            font-size: 11pt;
-        }
-        
-        .courses {
             font-size: 10pt;
-            color: var(--secondary);
-            margin-bottom: 0.5rem;
-            line-height: 1.4;
+            margin-bottom: 0.02in;
         }
         
-        .project {
-            margin-bottom: 1rem;
+        .school {
+            font-size: 9pt;
+            color: var(--secondary);
+            margin-bottom: 0.02in;
+        }
+        
+        .graduation {
+            font-size: 8pt;
+            color: var(--muted);
+        }
+        
+        /* Experience section */
+        .experience-item {
+            margin-bottom: 0.2in;
+            page-break-inside: avoid;
+        }
+        
+        .experience-header {
+            margin-bottom: 0.1in;
+        }
+        
+        .job-title {
+            font-weight: 700;
+            font-size: 11pt;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+        }
+        
+        .company-logo {
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
+        }
+        
+        .company {
+            font-weight: 600;
+            font-size: 10pt;
+            color: var(--primary);
+        }
+        
+        .period, .location {
+            font-size: 8pt;
+            color: var(--muted);
+            display: flex;
+            align-items: center;
+        }
+        
+        .period i, .location i {
+            margin-right: 5px;
+            font-size: 8pt;
+            color: var(--primary);
+        }
+        
+        ul {
+            padding-left: 0.2in;
+            margin-bottom: 0.1in;
+        }
+        
+        li {
+            font-size: 9pt;
+            margin-bottom: 0.05in;
+        }
+        
+        /* Projects section - simplified */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.1in;
+        }
+        
+        .project-item {
+            background-color: var(--light-bg);
+            padding: 0.1in;
+            border-radius: 4px;
+            border-left: 3px solid var(--primary);
         }
         
         .project-title {
-            font-weight: 700;
-            color: var(--dark);
-            font-size: 12pt;
+            font-weight: 600;
+            font-size: 10pt;
+            color: var(--primary);
+            margin-bottom: 0.05in;
         }
         
-        .project-period {
-            color: var(--secondary);
-            font-size: 10pt;
-            margin-bottom: 0.5rem;
+        .project-description {
+            font-size: 8pt;
         }
         
-        .project-desc {
-            margin-bottom: 0.5rem;
-            font-size: 10pt;
+        /* Page settings for print */
+        @page {
+            size: letter;
+            margin: 0.4in;
         }
         
         @media print {
             body {
-                padding: 0.5in;
-                margin: 0;
-                width: 100%;
-                height: auto;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
             }
             
-            .page-break {
-                page-break-before: always;
+            .resume-container {
+                max-height: 10in;
             }
         }
     </style>
@@ -258,182 +338,249 @@
             window.print();
         }
     </script>
-    <header>
-        <div class="header-content">
-            <div class="profile-info">
-                <h1>DAVID MILLER</h1>
-                <div class="title">Sales Leader & Product Manager</div>
-            </div>
-            <div class="contact-info">
-                <div class="contact-item"><i class="fas fa-map-marker-alt"></i> Colorado Springs, Colorado</div>
-                <div class="contact-item"><i class="fas fa-envelope"></i> millerndavid@gmail.com</div>
-                <div class="contact-item"><i class="fas fa-phone"></i> 703-946-0254</div>
-                <div class="contact-item"><i class="fas fa-globe"></i> davidmillerportfolio.com</div>
-            </div>
-        </div>
-    </header>
     
-    <section class="section">
-        <h2>PROFESSIONAL SUMMARY</h2>
-        <div class="about">
-            While earning an Associate of Science in Mechanical Drafting and CAD from Pikes Peak State College, I've taken on the dynamic roles of VP of Sales / Product Manager at Borealis and Terrene Tires. My core competencies are driving eCommerce and B2B sales, leading product development, and process improvement that scale success for small businesses.
-            <br><br>
-            At these organizations, our teams have consistently surpassed growth targets, achieving record revenue spikes and gross margin increases. With a focus on strategic sales initiatives and product launches, like the Keystone Electric Bike, we've seen a significant lift in average order values. My goal is to continue aligning with the company's culture, bringing diverse perspectives and experiences to foster an environment of innovation and growth.
-        </div>
-    </section>
-    
-    <section class="section">
-        <h2>EXPERIENCE</h2>
-        
-        <div class="experience-item">
-            <div class="job-title">VP of Sales / Product Manager</div>
-            <div class="company">Borealis Fat Bikes / Terrene Tires</div>
-            <div class="period">August 2019 - Present · 5 years 9 months</div>
-            <div class="location">Colorado Springs, Colorado, United States · Hybrid</div>
-            <ul>
-                <li>Directed a multi-channel sales strategy that met or surpassed annual growth targets for revenue and net profit determined by the CEO of both companies.</li>
-                <li>Led all sales initiatives, optimized operations, and built a high-performing team—driving record YoY revenue growth of 50% and 75% in the company's best-performing years.</li>
-                <li>Drove a 6-8% YoY increase in gross margin over three consecutive years through pricing optimization and cost reductions; later navigated a market-driven decline, implementing strategic adjustments to mitigate impact.</li>
-                <li>Managed the product launch and sale of the Keystone Electric Bike resulting in an overall AOV increase of 24%.</li>
-                <li>Represented both companies in sales while building and maintaining strong client relationships across multiple channels.</li>
-                <li>Worked alongside the CEO during the acquisition of Terrene Tires, gaining firsthand experience in due diligence, deal structuring, and strategic business integration.</li>
-            </ul>
-            <div class="skills">
-                <span class="skill">Sales</span>
-                <span class="skill">Account Management</span>
-                <span class="skill">Product Development</span>
-                <span class="skill">eCommerce</span>
-                <span class="skill">B2B Sales</span>
+    <div class="resume-container">
+        <!-- Left sidebar column -->
+        <div class="sidebar">
+            <div class="header">
+                <div class="photo-container">
+                    <img src="portfolio/images/headshot.jpg" alt="David Miller">
+                </div>
+                <h1 class="name">DAVID MILLER</h1>
+                <p class="title">Sales Leader & Product Manager</p>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Colorado Springs, Colorado</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>millerndavid@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>703-946-0254</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-globe"></i>
+                        <span>davidmillerportfolio.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <span>linkedin.com/in/david-miller-colorado</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Skills</h2>
+                
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Sales & Marketing</h3>
+                    <div class="skill-item">
+                        <span class="skill-name">eCommerce</span>
+                        <div class="skill-level">
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">B2B Sales</span>
+                        <div class="skill-level">
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Channel Management</span>
+                        <div class="skill-level">
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">CRM Systems</span>
+                        <div class="skill-level">
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Leadership</h3>
+                    <div class="skill-item">
+                        <span class="skill-name">Team Management</span>
+                        <div class="skill-level">
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Strategic Planning</span>
+                        <div class="skill-level">
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Process Improvement</span>
+                        <div class="skill-level">
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Technical</h3>
+                    <div class="skill-item">
+                        <span class="skill-name">CAD/CAM Software</span>
+                        <div class="skill-level">
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Creo Parametric</span>
+                        <div class="skill-level">
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Education</h2>
+                <div class="education-item">
+                    <div class="degree">Associate of Science</div>
+                    <div class="school">Mechanical Drafting and CAD</div>
+                    <div class="school">Pikes Peak State College</div>
+                    <div class="graduation">2022 - Present</div>
+                </div>
             </div>
         </div>
         
-        <div class="experience-item">
-            <div class="job-title">Sales Representative</div>
-            <div class="company">Mountain Equipment Recyclers</div>
-            <div class="period">2017 - 2019 · 2 years</div>
-            <div class="location">Colorado Springs, Colorado, United States · On-site</div>
-            <ul>
-                <li>Assisted customers in finding quality outdoor gear and apparel from a wide selection of consigned items.</li>
-                <li>Educated customers on gear functionality, fit, and best use for activities like hiking, biking, skiing, and climbing.</li>
-                <li>Processed consignments, inspected gear for quality, and priced items competitively based on market demand.</li>
-                <li>Maintained an organized and welcoming retail space to enhance the shopping experience.</li>
-                <li>Operated point-of-sale systems, handled transactions, and provided excellent customer service.</li>
-                <li>Stayed knowledgeable about outdoor gear trends to better assist customers and maximize sales.</li>
-            </ul>
-            <div class="skills">
-                <span class="skill">Retail Sales</span>
-                <span class="skill">Customer Service</span>
-                <span class="skill">Inventory Management</span>
-                <span class="skill">Product Knowledge</span>
+        <!-- Main content column -->
+        <div class="main-content">
+            <div class="section">
+                <h2 class="section-title">Professional Summary</h2>
+                <p>
+                    While earning my Associate of Science in Mechanical Drafting and CAD from Pikes Peak State College, I've taken on the dynamic roles of VP of Sales / Product Manager at Borealis and Terrene Tires. My core competencies are driving eCommerce and B2B sales, leading product development, and process improvement that scale success for small businesses.
+                </p>
+                <p>
+                    At these organizations, our teams have consistently surpassed growth targets, achieving record revenue spikes and gross margin increases. With a focus on strategic sales initiatives and product launches, like the Keystone Electric Bike, we've seen a significant lift in average order values.
+                </p>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Professional Experience</h2>
+                
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="job-title">
+                            VP of Sales / Product Manager
+                        </div>
+                        <div class="company">Borealis Fat Bikes / Terrene Tires</div>
+                        <div class="period"><i class="far fa-calendar-alt"></i> August 2019 - Present</div>
+                        <div class="location"><i class="fas fa-map-marker-alt"></i> Colorado Springs, Colorado · Hybrid</div>
+                    </div>
+                    <ul>
+                        <li>Directed a multi-channel sales strategy that met or surpassed annual growth targets for revenue and net profit determined by the CEO of both companies.</li>
+                        <li>Led all sales initiatives, optimized operations, and built a high-performing team—driving record YoY revenue growth of 50% and 75% in the company's best-performing years.</li>
+                        <li>Drove a 6-8% YoY increase in gross margin over three consecutive years through pricing optimization and cost reductions.</li>
+                        <li>Managed the product launch and sale of the Keystone Electric Bike resulting in an overall AOV increase of 24%.</li>
+                        <li>Worked alongside the CEO during the acquisition of Terrene Tires, gaining firsthand experience in due diligence, deal structuring, and strategic business integration.</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="job-title">
+                            Sales Representative
+                        </div>
+                        <div class="company">Mountain Equipment Recyclers</div>
+                        <div class="period"><i class="far fa-calendar-alt"></i> 2017 - 2019</div>
+                        <div class="location"><i class="fas fa-map-marker-alt"></i> Colorado Springs, Colorado · On-site</div>
+                    </div>
+                    <ul>
+                        <li>Assisted customers in finding quality outdoor gear and apparel from a wide selection of consigned items.</li>
+                        <li>Educated customers on gear functionality, fit, and best use for activities like hiking, biking, skiing, and climbing.</li>
+                        <li>Processed consignments, inspected gear for quality, and priced items competitively based on market demand.</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div class="job-title">
+                            Infantry Team Leader
+                        </div>
+                        <div class="company">US Army</div>
+                        <div class="period"><i class="far fa-calendar-alt"></i> 2014 - 2017</div>
+                        <div class="location"><i class="fas fa-map-marker-alt"></i> Fort Carson, Colorado · On-site</div>
+                    </div>
+                    <ul>
+                        <li>Led and trained soldiers – Directed and mentored a fire team, ensuring they were physically and mentally prepared for combat.</li>
+                        <li>Planned and executed missions – Developed and executed tactical plans, leading small-unit movements, assaults, and defensive operations.</li>
+                        <li>Maintained equipment and readiness – Ensured weapons, gear, and communication systems were properly maintained and ready for deployment.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-item">
+                        <div class="project-title">Borealis Keystone Electric Bike</div>
+                        <div class="project-description">Led the development from concept to market launch. Collaborated with Taiwanese manufacturers to finalize frame design, managed component selection, and quality control.</div>
+                    </div>
+                    
+                    <div class="project-item">
+                        <div class="project-title">Terrene Tires Acquisition</div>
+                        <div class="project-description">Played a pivotal role in the acquisition and integration of Minneapolis-based company specializing in high-quality fat and plus-sized bike tires.</div>
+                    </div>
+                    
+                    <div class="project-item">
+                        <div class="project-title">Robot Hand - Creo Parametric</div>
+                        <div class="project-description">Designed a fully mechanical robotic hand using Creo Parametric with rigid-body mechanics powered by three individually mounted stepper motors.</div>
+                    </div>
+                    
+                    <div class="project-item">
+                        <div class="project-title">Sales Operations Optimization</div>
+                        <div class="project-description">Implemented streamlined sales processes that reduced order processing time by 35% and increased customer satisfaction scores.</div>
+                    </div>
+                </div>
             </div>
         </div>
-        
-        <div class="experience-item">
-            <div class="job-title">Infantry Team Leader</div>
-            <div class="company">US Army</div>
-            <div class="period">2014 - 2017 · 3 years</div>
-            <div class="location">Fort Carson, Colorado, United States · On-site</div>
-            <ul>
-                <li>Led and trained soldiers – Directed and mentored a fire team, ensuring they were physically and mentally prepared for combat. Provided tactical training and enforced discipline.</li>
-                <li>Planned and executed missions – Developed and executed tactical plans, leading small-unit movements, assaults, and defensive operations in coordination with squad leaders.</li>
-                <li>Maintained equipment and readiness – Ensured weapons, gear, and communication systems were properly maintained and ready for deployment while managing logistics for team effectiveness.</li>
-            </ul>
-            <div class="skills">
-                <span class="skill">Team Leadership</span>
-                <span class="skill">Tactical Operations</span>
-                <span class="skill">Strategic Planning</span>
-                <span class="skill">Problem Solving</span>
-            </div>
-        </div>
-    </section>
-    
-    <section class="section">
-        <h2>EDUCATION</h2>
-        <div class="education-item">
-            <h3>Pikes Peak State College</h3>
-            <div class="degree">Associate of Science (AS), Mechanical Drafting and Mechanical Drafting CAD/CADD</div>
-            <div class="courses">2D and 3D Parametric Modeling, SolidWorks, Creo Parametric, Technical Drawings, GD&T, Mechanics, Statics, Thermodynamics, FMEA, FEA, Manufacturing Technology</div>
-            <div class="skills">
-                <span class="skill">Mechanical Engineering</span>
-                <span class="skill">Microsoft Office</span>
-                <span class="skill">SolidWorks</span>
-                <span class="skill">Creo Parametric</span>
-                <span class="skill">CAD</span>
-                <span class="skill">Technical Drawing</span>
-                <span class="skill">GD&T</span>
-            </div>
-        </div>
-    </section>
-    
-    <section class="section">
-        <h2>KEY PROJECTS</h2>
-        
-        <div class="project">
-            <div class="project-title">Conception to Completion: The Borealis Keystone</div>
-            <div class="project-period">February 2022 - October 2023</div>
-            <div class="project-desc">
-                Led the development of the Borealis Keystone electric fat bike from concept to market launch. As product leader, I:
-                <ul>
-                    <li>Collaborated with Taiwanese trading agent and overseas manufacturers to finalize frame design</li>
-                    <li>Managed component selection, build specs, and quality control with internal teams</li>
-                    <li>Applied Agile methodology to break the project into flexible, manageable stages</li>
-                    <li>Overcame major roadblocks in assembly, marketing, and supply chain logistics</li>
-                    <li>Delivered a premium product with high-end components from Shimano and SRAM</li>
-                    <li>Achieved strong customer response with preorders, five-star reviews, and 24% increase in average order value</li>
-                </ul>
-            </div>
-            <div class="skills">
-                <span class="skill">Project Management</span>
-                <span class="skill">Go-to-Market Strategy</span>
-                <span class="skill">Product Development</span>
-                <span class="skill">Multi-Channel Commerce</span>
-                <span class="skill">Pricing Strategy</span>
-            </div>
-        </div>
-        
-        <div class="project">
-            <div class="project-title">Acquisition and Integration of Terrene Tires</div>
-            <div class="project-period">July 2022</div>
-            <div class="project-desc">
-                Played a pivotal role in the acquisition and integration of Terrene Tires, a Minneapolis-based company specializing in high-quality tires for fat and plus-sized bikes:
-                <ul>
-                    <li>Supported due diligence by evaluating product lines, inventory, and e-commerce operations</li>
-                    <li>Managed transition: received and verified inventory, relaunched website, restored brand identity</li>
-                    <li>Handled customer communications including press releases and dealer outreach</li>
-                    <li>Developed new pricing model aligned with acquisition terms</li>
-                    <li>Represented the company at the Taipei Bike Show, strengthening relationships with trading agents and manufacturers</li>
-                </ul>
-            </div>
-            <div class="skills">
-                <span class="skill">Strategic Planning</span>
-                <span class="skill">Sales Operations</span>
-                <span class="skill">Product Lifecycle Management</span>
-                <span class="skill">Business Integration</span>
-                <span class="skill">International Business</span>
-            </div>
-        </div>
-    </section>
-    
-    <section class="section">
-        <h2>CORE COMPETENCIES</h2>
-        <div class="skills">
-            <span class="skill">Multi-Channel Sales Strategy</span>
-            <span class="skill">eCommerce Operations</span>
-            <span class="skill">B2B Sales</span>
-            <span class="skill">Product Development</span>
-            <span class="skill">Team Leadership</span>
-            <span class="skill">Business Integration</span>
-            <span class="skill">Go-to-Market Strategy</span>
-            <span class="skill">Revenue Growth</span>
-            <span class="skill">Margin Optimization</span>
-            <span class="skill">Pricing Strategy</span>
-            <span class="skill">Strategic Planning</span>
-            <span class="skill">Mechanical Engineering</span>
-            <span class="skill">CAD/CAM Software</span>
-            <span class="skill">Process Improvement</span>
-            <span class="skill">International Business</span>
-            <span class="skill">Agile Methodology</span>
-        </div>
-    </section>
+    </div>
 </body>
 </html>
