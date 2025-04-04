@@ -119,12 +119,19 @@ function animateSkillBars() {
     const skillBars = document.querySelectorAll('.skill-level');
     
     skillBars.forEach(bar => {
-        const percentage = bar.getAttribute('data-level');
+        // Get the original width from the inline style
+        const originalWidth = bar.style.width || bar.getAttribute('data-level') || '90%';
+        
+        // Store the original width as a data attribute for reference
+        bar.setAttribute('data-original-width', originalWidth);
+        
+        // Set initial width to 0
         bar.style.width = '0%';
         
+        // Animate to the original width
         setTimeout(() => {
             bar.style.transition = 'width 1s ease-in-out';
-            bar.style.width = percentage;
+            bar.style.width = originalWidth;
         }, 200);
     });
 }
