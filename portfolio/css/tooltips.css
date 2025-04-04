@@ -1,0 +1,77 @@
+/* Skill Tooltips Styling */
+.skill-item {
+    position: relative;
+}
+
+.skill-tooltip {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 100%;
+    width: 280px;
+    background-color: var(--dark);
+    color: white;
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-md);
+    pointer-events: none;
+    margin-bottom: 15px;
+}
+
+.skill-tooltip::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -8px;
+    transform: translateX(-50%);
+    border-width: 8px 8px 0;
+    border-style: solid;
+    border-color: var(--dark) transparent transparent;
+}
+
+.skill-tooltip-title {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    color: var(--accent-light);
+}
+
+.skill-tooltip ul {
+    margin: 0;
+    padding-left: 15px;
+}
+
+.skill-tooltip li {
+    margin-bottom: 4px;
+}
+
+.skill-tooltip li:last-child {
+    margin-bottom: 0;
+}
+
+.skill-item:hover .skill-tooltip {
+    opacity: 1;
+    visibility: visible;
+    bottom: calc(100% + 10px);
+}
+
+/* Mobile responsive adjustments */
+@media screen and (max-width: 768px) {
+    .skill-tooltip {
+        width: 220px;
+        font-size: 0.8rem;
+        left: 0;
+        transform: none;
+    }
+    
+    .skill-tooltip::after {
+        left: 20px;
+        transform: none;
+    }
+}
