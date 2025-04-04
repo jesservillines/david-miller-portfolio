@@ -9,6 +9,42 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        /* Print-optimized resume styling with download button */
+        
+        .download-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        
+        .download-btn {
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .download-btn:hover {
+            background-color: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+        
+        @media print {
+            .download-container {
+                display: none;
+            }
+        }
+        
         /* Print-optimized resume styling */
         :root {
             --primary: #2563eb;
@@ -211,6 +247,17 @@
     </style>
 </head>
 <body>
+    <div class="download-container">
+        <button onclick="printResume()" class="download-btn">
+            <i class="fas fa-download"></i> Download PDF
+        </button>
+    </div>
+    
+    <script>
+        function printResume() {
+            window.print();
+        }
+    </script>
     <header>
         <div class="header-content">
             <div class="profile-info">
