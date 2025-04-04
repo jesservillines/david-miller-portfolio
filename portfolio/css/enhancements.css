@@ -1,0 +1,261 @@
+/* Enhanced Design Elements for David Miller's Portfolio
+-------------------------------------------------- */
+
+/* Smooth scrolling for the entire site */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 1. MICRO-INTERACTIONS & ANIMATIONS
+-------------------------------------------------- */
+
+/* Fade-in animation for sections */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-on-scroll {
+  opacity: 0;
+}
+
+.animate-on-scroll.animated {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Project card hover effects */
+.project-card {
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+              box-shadow 0.4s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 22px 43px rgba(0, 0, 0, 0.15);
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.05);
+}
+
+.project-card .project-image img {
+  transition: transform 0.5s ease;
+}
+
+/* Button hover effects */
+.btn {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: rgba(255, 255, 255, 0.1);
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+
+.btn:hover::after {
+  height: 100%;
+}
+
+.btn.btn-primary:hover {
+  box-shadow: 0 7px 14px rgba(37, 99, 235, 0.25);
+}
+
+.btn.btn-secondary:hover {
+  box-shadow: 0 7px 14px rgba(37, 99, 235, 0.15);
+}
+
+/* Timeline animations */
+.timeline-item {
+  transition: transform 0.4s ease;
+}
+
+.timeline-item:hover {
+  transform: translateX(5px);
+}
+
+.timeline::before {
+  transition: height 1s ease;
+}
+
+/* 2. TYPOGRAPHY REFINEMENTS
+-------------------------------------------------- */
+
+/* Enhanced typography hierarchy */
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.025em;
+}
+
+.hero-title {
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.hero-subtitle {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.section-title {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+
+.section-title::before {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120%;
+  height: 12px;
+  background: var(--accent-light);
+  z-index: -1;
+  opacity: 0.5;
+  border-radius: 30px;
+}
+
+p {
+  line-height: 1.8;
+}
+
+.project-title {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  transition: color 0.3s ease;
+}
+
+.project-card:hover .project-title {
+  color: var(--primary);
+}
+
+/* 3. VISUAL STORYTELLING
+-------------------------------------------------- */
+
+/* Enhanced hero section with overlay */
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+.hero-background::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(15, 23, 42, 0.6) 100%);
+  backdrop-filter: blur(2px);
+}
+
+/* Dynamic patterns */
+.about::before,
+.projects::before,
+.skills::before,
+.contact::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 300px;
+  background-image: radial-gradient(circle at center, var(--accent-light) 0%, transparent 70%);
+  opacity: 0.1;
+  z-index: -1;
+  border-radius: 50%;
+  transform: translate(30%, -30%);
+}
+
+.projects::before {
+  left: 0;
+  right: auto;
+  top: auto;
+  bottom: 0;
+  transform: translate(-30%, 30%);
+  width: 400px;
+  height: 400px;
+  background-image: radial-gradient(circle at center, var(--primary) 0%, transparent 70%);
+  opacity: 0.05;
+}
+
+.skills::before {
+  top: 50%;
+  right: 0;
+  transform: translate(40%, -50%);
+  width: 250px;
+  height: 250px;
+  background-image: radial-gradient(circle at center, var(--secondary) 0%, transparent 70%);
+}
+
+/* Add depth to skill bars */
+.skill-bar {
+  overflow: hidden;
+  background: linear-gradient(90deg, rgba(241, 245, 249, 0.4) 0%, rgba(241, 245, 249, 0.8) 100%);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.skill-level {
+  background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+  box-shadow: 0 0 10px rgba(37, 99, 235, 0.3);
+}
+
+/* Enhanced project modal */
+.modal-content {
+  transform: scale(0.95);
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.modal.active .modal-content {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Loading state for gallery images */
+.gallery-item img {
+  transition: filter 0.5s ease, transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+  filter: brightness(1.05);
+  transform: scale(1.03);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .about::before,
+  .projects::before,
+  .skills::before,
+  .contact::before {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .section-title::before {
+    height: 8px;
+  }
+}
