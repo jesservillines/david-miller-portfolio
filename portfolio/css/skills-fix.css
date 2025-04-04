@@ -41,11 +41,11 @@
 
 .skill-level {
     height: 100%;
-    background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+    background: linear-gradient(90deg, #2563eb 0%, #10b981 100%) !important;
     border-radius: 5px;
     position: absolute;
     top: 0;
     left: 0;
     box-shadow: 0 0 5px rgba(37, 99, 235, 0.5);
-    transition: width 1s ease-in-out;
+    display: block !important;
 }

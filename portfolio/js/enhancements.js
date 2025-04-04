@@ -113,26 +113,17 @@ function enhanceModalAnimations() {
     });
 }
 
-// 4. SKILL BAR ANIMATION
+// 4. SIMPLIFIED SKILL BAR APPROACH
 // =================================================================
 function animateSkillBars() {
     const skillBars = document.querySelectorAll('.skill-level');
     
     skillBars.forEach(bar => {
-        // Get the original width from the inline style
-        const originalWidth = bar.style.width || bar.getAttribute('data-level') || '90%';
-        
-        // Store the original width as a data attribute for reference
-        bar.setAttribute('data-original-width', originalWidth);
-        
-        // Set initial width to 0
-        bar.style.width = '0%';
-        
-        // Animate to the original width
-        setTimeout(() => {
-            bar.style.transition = 'width 1s ease-in-out';
+        // Ensure the width is applied directly
+        if (bar.style.width === '0%' || !bar.style.width) {
+            const originalWidth = bar.getAttribute('data-original-width') || bar.style.width || '90%';
             bar.style.width = originalWidth;
-        }, 200);
+        }
     });
 }
 
