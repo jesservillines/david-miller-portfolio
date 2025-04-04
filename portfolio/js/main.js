@@ -197,24 +197,13 @@ window.addEventListener('click', (e) => {
     }
 });
 
-// Form validation
+// Form is now handled by Formspree
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Simple form validation
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
-        
-        if (name && email && message) {
-            // In a real-world scenario, you'd send this data to a server
-            alert('Thank you for your message! I will get back to you soon.');
-            contactForm.reset();
-        } else {
-            alert('Please fill out all required fields.');
-        }
+    contactForm.addEventListener('submit', function() {
+        // Form validation is handled by HTML5 and Formspree
+        console.log('Form submitted to Formspree');
+        // Formspree will handle the form submission and redirection
     });
 }
 
