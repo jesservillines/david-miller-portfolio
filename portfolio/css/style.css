@@ -474,6 +474,7 @@ ul {
     border-radius: var(--border-radius);
     overflow: hidden;
     box-shadow: var(--shadow-sm);
+    max-width: 400px;
 }
 
 .experience-image img {

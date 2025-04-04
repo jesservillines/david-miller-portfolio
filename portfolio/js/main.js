@@ -104,16 +104,16 @@ const projectDetails = {
             
             <div class="project-gallery">
                 <div class="gallery-item">
-                    <img src="images/terrene-sales-guide.jpg" alt="Sales Enablement Guide">
-                    <p class="caption">Digital catalog created to onboard international dealers, OEMs, and distributors following the acquisition of Terrene Tires.</p>
+                    <img src="/portfolio/images/terrene-tires.jpg" alt="Terrene Tires Collection">
+                    <p class="caption">High-quality tires for fat and plus-sized bikes from the Terrene Tires product line, specializing in various terrain types and conditions.</p>
                 </div>
                 <div class="gallery-item">
-                    <img src="images/terrene-iditarod.jpg" alt="Iditarod Trail">
-                    <p class="caption">Equipping professional athletes with the right tools for the job. Pivot Bikes athlete Kurt Refsnider photo using Terrene Johnny 5's to ride the Iditarod Trail in Alaska.</p>
+                    <img src="/portfolio/images/terrene-tires-2.jpg" alt="Terrene Tires Brand Identity">
+                    <p class="caption">Post-acquisition brand identity restoration, maintaining Terrene's reputation for quality while integrating with Borealis Fat Bikes.</p>
                 </div>
                 <div class="gallery-item">
-                    <img src="images/terrene-tbw.jpg" alt="Taipei Bike Week">
-                    <p class="caption">Taipei Bike Week is an industry-exclusive event held annually in Taipei, Taiwan, bringing together OEM product managers, bicycle brands, and component suppliers from around the world.</p>
+                    <img src="/portfolio/images/terrene-tires-3.jpg" alt="Terrene Tires Marketing">
+                    <p class="caption">Marketing materials showcasing the specialized application of Terrene Tires products for various cycling disciplines and conditions.</p>
                 </div>
             </div>
         `,
