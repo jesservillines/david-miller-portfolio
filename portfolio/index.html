@@ -93,86 +93,217 @@
                 <div class="section-line"></div>
             </div>
             
-            <div class="timeline-container">
-                <div class="timeline-track">
-                    <div class="timeline-node" id="node-2014">
-                        <div class="timeline-node-dot"></div>
-                        <div class="timeline-node-year">2014</div>
-                        <div class="timeline-node-content">
-                            <div class="timeline-node-title">Infantry Team Leader</div>
-                            <div class="timeline-node-subtitle">US Army</div>
-                            <p class="timeline-node-description">Led and trained soldiers, executed tactical missions, and maintained combat readiness.</p>
-                        </div>
-                    </div>
+            <div class="timeline-experience-wrapper">
+                <!-- Info Card (shows for active timeline node) -->
+                <div class="info-card" id="card-2025">
+                    <h3 class="info-card-title">VP of Sales / Product Manager</h3>
+                    <h4 class="info-card-subtitle">Borealis Fat Bikes / Terrene Tires</h4>
+                    <p class="info-card-description">Led commercial strategy achieving over $5M in annual revenue through multi-channel approach across bike and tire product lines.</p>
+                </div>
+                
+                <!-- Simple Timeline Container -->
+                <div class="timeline-container">
+                    <!-- Horizontal timeline line -->
+                    <div class="timeline-line"></div>
                     
-                    <div class="timeline-node" id="node-2016">
-                        <div class="timeline-node-dot"></div>
-                        <div class="timeline-node-year">2016</div>
-                        <div class="timeline-node-content">
-                            <div class="timeline-node-title">Senior Infantry Leader</div>
-                            <div class="timeline-node-subtitle">US Army</div>
-                            <p class="timeline-node-description">Promoted to senior leadership position, coordinating multiple teams in complex operations.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-node" id="node-2017">
-                        <div class="timeline-node-dot"></div>
+                    <!-- Timeline Nodes -->
+                    <div class="timeline-node" id="node-2017" style="left: 0%">
                         <div class="timeline-node-year">2017</div>
-                        <div class="timeline-node-content">
-                            <div class="timeline-node-title">Sales Representative</div>
-                            <div class="timeline-node-subtitle">Mountain Equipment Recyclers</div>
-                            <p class="timeline-node-description">Provided expert product guidance and managed sales operations for outdoor gear and apparel.</p>
-                        </div>
+                        <div class="timeline-node-dot"></div>
                     </div>
                     
-                    <div class="timeline-node" id="node-2019">
-                        <div class="timeline-node-dot"></div>
+                    <div class="timeline-node" id="node-2019" style="left: 25%">
                         <div class="timeline-node-year">2019</div>
-                        <div class="timeline-node-content">
-                            <div class="timeline-node-title">Product Manager</div>
-                            <div class="timeline-node-subtitle">Borealis Fat Bikes</div>
-                            <p class="timeline-node-description">Drove a 6-8% YoY increase in gross margin through pricing optimization and strategic cost reductions.</p>
-                        </div>
+                        <div class="timeline-node-dot"></div>
                     </div>
                     
-                    <div class="timeline-node" id="node-2021">
-                        <div class="timeline-node-dot"></div>
+                    <div class="timeline-node" id="node-2021" style="left: 50%">
                         <div class="timeline-node-year">2021</div>
-                        <div class="timeline-node-content">
-                            <div class="timeline-node-title">Keystone E-Bike Launch</div>
-                            <div class="timeline-node-subtitle">Borealis Fat Bikes</div>
-                            <p class="timeline-node-description">Managed product launch resulting in 24% increase in Average Order Value across all sales channels.</p>
-                        </div>
+                        <div class="timeline-node-dot"></div>
                     </div>
                     
-                    <div class="timeline-node" id="node-2023">
-                        <div class="timeline-node-dot"></div>
+                    <div class="timeline-node" id="node-2023" style="left: 75%">
                         <div class="timeline-node-year">2023</div>
-                        <div class="timeline-node-content">
-                            <div class="timeline-node-title">Terrene Tires Acquisition</div>
-                            <div class="timeline-node-subtitle">Borealis Fat Bikes</div>
-                            <p class="timeline-node-description">Worked alongside CEO during acquisition, gaining firsthand experience in due diligence and business integration.</p>
-                        </div>
+                        <div class="timeline-node-dot"></div>
                     </div>
                     
-                    <div class="timeline-node" id="node-2025">
-                        <div class="timeline-node-dot"></div>
+                    <div class="timeline-node active" id="node-2025" style="left: 98%">
                         <div class="timeline-node-year">2025</div>
-                        <div class="timeline-node-content">
-                            <div class="timeline-node-title">VP of Sales / Product Manager</div>
-                            <div class="timeline-node-subtitle">Borealis Fat Bikes / Terrene Tires</div>
-                            <p class="timeline-node-description">Led commercial strategy achieving over $5M in annual revenue through multi-channel approach across bike and tire product lines.</p>
-                        </div>
+                        <div class="timeline-node-dot"></div>
+                    </div>
+                    
+                    <!-- Navigation Controls -->
+                    <div class="timeline-navigation">
+                        <button class="timeline-nav-btn" id="timelinePrev">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="timeline-nav-btn" id="timelineNext">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
                     </div>
                 </div>
                 
-                <div class="timeline-navigation">
-                    <button class="timeline-nav-btn" id="timelinePrev">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <button class="timeline-nav-btn" id="timelineNext">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
+                <!-- Hidden Content for Different Years -->
+                <div style="display: none;">
+                    <div id="content-2017">
+                        <h3>Sales Representative</h3>
+                        <h4>Mountain Equipment Recyclers</h4>
+                        <p>Provided expert product guidance and managed sales operations for outdoor gear and apparel.</p>
+                    </div>
+                    
+                    <div id="content-2019">
+                        <h3>Product Manager</h3>
+                        <h4>Borealis Fat Bikes</h4>
+                        <p>Drove a 6-8% YoY increase in gross margin through pricing optimization and strategic cost reductions.</p>
+                    </div>
+                    
+                    <div id="content-2021">
+                        <h3>Keystone E-Bike Launch</h3>
+                        <h4>Borealis Fat Bikes</h4>
+                        <p>Managed product launch resulting in 24% increase in Average Order Value across all sales channels.</p>
+                    </div>
+                    
+                    <div id="content-2023">
+                        <h3>Terrene Tires Acquisition</h3>
+                        <h4>Borealis Fat Bikes</h4>
+                        <p>Worked alongside CEO during acquisition, gaining firsthand experience in due diligence and business integration.</p>
+                    </div>
+                    
+                    <div id="content-2025">
+                        <h3>VP of Sales / Product Manager</h3>
+                        <h4>Borealis Fat Bikes / Terrene Tires</h4>
+                        <p>Led commercial strategy achieving over $5M in annual revenue through multi-channel approach across bike and tire product lines.</p>
+                    </div>
+                </div>
+            </div>
+                    
+                    <!-- Terrene Tires Acquisition (2023) -->
+                    <div class="detail-panel-content" id="experience-detail-2023" style="display: none;">
+                        <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                            <div style="width: 60px; height: 60px; overflow: hidden; border-radius: 50%; margin-right: 15px;">
+                                <img src="images/terrene.png" alt="Terrene Tires" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div>
+                                <h3 style="margin: 0; font-size: 1.4em;">Terrene Tires Acquisition</h3>
+                                <h4 style="margin: 5px 0; color: var(--secondary); font-weight: 500;">Borealis Fat Bikes</h4>
+                                <p style="margin: 0; font-size: 0.9em; color: var(--gray-500);"><i class="fas fa-map-marker-alt"></i> Colorado Springs, Colorado <span style="margin-left: 5px; padding: 2px 8px; background-color: rgba(101, 220, 155, 0.2); border-radius: 12px; font-size: 0.85em; color: #43a047;">2023</span></p>
+                            </div>
+                        </div>
+                        <div style="padding: 0 0 15px 15px;">
+                            <div style="margin-bottom: 12px;">
+                                <p style="margin: 0 0 6px 0; display: flex; align-items: flex-start;"><span style="color: var(--primary); margin-right: 10px; font-size: 1.2em;">•</span> Worked alongside CEO during acquisition, gaining firsthand experience in due diligence processes.</p>
+                            </div>
+                            <div style="margin-bottom: 12px;">
+                                <p style="margin: 0 0 6px 0; display: flex; align-items: flex-start;"><span style="color: var(--primary); margin-right: 10px; font-size: 1.2em;">•</span> Led the integration of Terrene Tires' product line into Borealis' existing sales channels.</p>
+                            </div>
+                            <div style="margin-bottom: 12px;">
+                                <p style="margin: 0 0 6px 0; display: flex; align-items: flex-start;"><span style="color: var(--primary); margin-right: 10px; font-size: 1.2em;">•</span> Coordinated go-to-market strategy for the combined product portfolio.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Keystone E-Bike Launch (2021) -->
+                    <div class="detail-panel-content" id="experience-detail-2021" style="display: none;">
+                        <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                            <div style="width: 60px; height: 60px; overflow: hidden; border-radius: 50%; margin-right: 15px;">
+                                <img src="images/keystone.jpg" alt="Keystone E-Bike" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div>
+                                <h3 style="margin: 0; font-size: 1.4em;">Keystone E-Bike Launch</h3>
+                                <h4 style="margin: 5px 0; color: var(--secondary); font-weight: 500;">Borealis Fat Bikes</h4>
+                                <p style="margin: 0; font-size: 0.9em; color: var(--gray-500);"><i class="fas fa-map-marker-alt"></i> Colorado Springs, Colorado <span style="margin-left: 5px; padding: 2px 8px; background-color: rgba(101, 220, 155, 0.2); border-radius: 12px; font-size: 0.85em; color: #43a047;">2021</span></p>
+                            </div>
+                        </div>
+                        <div style="padding: 0 0 15px 15px;">
+                            <div style="margin-bottom: 12px;">
+                                <p style="margin: 0 0 6px 0; display: flex; align-items: flex-start;"><span style="color: var(--primary); margin-right: 10px; font-size: 1.2em;">•</span> Managed product launch resulting in 24% increase in Average Order Value across all sales channels.</p>
+                            </div>
+                            <div style="margin-bottom: 12px;">
+                                <p style="margin: 0 0 6px 0; display: flex; align-items: flex-start;"><span style="color: var(--primary); margin-right: 10px; font-size: 1.2em;">•</span> Led introduction of electric bike technology into Borealis product line.</p>
+                            </div>
+                            <div style="margin-bottom: 12px;">
+                                <p style="margin: 0 0 6px 0; display: flex; align-items: flex-start;"><span style="color: var(--primary); margin-right: 10px; font-size: 1.2em;">•</span> Established distribution partnerships with key retailers to maximize market presence.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product Manager (2019) -->
+                    <div class="detail-panel-content" id="experience-detail-2019" style="display: none;">
+                        <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                            <div style="width: 60px; height: 60px; overflow: hidden; border-radius: 50%; margin-right: 15px;">
+                                <img src="images/borealis.png" alt="Borealis Fat Bikes" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div>
+                                <h3 style="margin: 0; font-size: 1.4em;">Product Manager</h3>
+                                <h4 style="margin: 5px 0; color: var(--secondary); font-weight: 500;">Borealis Fat Bikes</h4>
+                                <p style="margin: 0; font-size: 0.9em; color: var(--gray-500);"><i class="fas fa-map-marker-alt"></i> Colorado Springs, Colorado <span style="margin-left: 5px; padding: 2px 8px; background-color: rgba(101, 220, 155, 0.2); border-radius: 12px; font-size: 0.85em; color: #43a047;">2019</span></p>
+                            </div>
+                        </div>
+                        <div style="padding: 0 0 15px 15px;">
+                            <div style="margin-bottom: 12px;">
+                                <p style="margin: 0 0 6px 0; display: flex; align-items: flex-start;"><span style="color: var(--primary); margin-right: 10px; font-size: 1.2em;">•</span> Drove a 6-8% YoY increase in gross margin through pricing optimization and strategic cost reductions.</p>
+                            </div>
+                            <div style="margin-bottom: 12px;">
+                                <p style="margin: 0 0 6px 0; display: flex; align-items: flex-start;"><span style="color: var(--primary); margin-right: 10px; font-size: 1.2em;">•</span> Led product development and feature prioritization for fat bike product lines.</p>
+                            </div>
+                            <div style="margin-bottom: 12px;">
+                                <p style="margin: 0 0 6px 0; display: flex; align-items: flex-start;"><span style="color: var(--primary); margin-right: 10px; font-size: 1.2em;">•</span> Collaborated with engineering and manufacturing teams to optimize production processes.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Sales Representative (2017) -->
+                    <div class="detail-panel-content" id="experience-detail-2017" style="display: none;">
+                        <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                            <div style="width: 60px; height: 60px; overflow: hidden; border-radius: 50%; margin-right: 15px;">
+                                <img src="images/mer.jpg" alt="Mountain Equipment Recyclers" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div>
+                                <h3 style="margin: 0; font-size: 1.4em;">Sales Representative</h3>
+                                <h4 style="margin: 5px 0; color: var(--secondary); font-weight: 500;">Mountain Equipment Recyclers</h4>
+                                <p style="margin: 0; font-size: 0.9em; color: var(--gray-500);"><i class="fas fa-map-marker-alt"></i> Colorado Springs, Colorado <span style="margin-left: 5px; padding: 2px 8px; background-color: rgba(101, 220, 155, 0.2); border-radius: 12px; font-size: 0.85em; color: #43a047;">2017-2019</span></p>
+                            </div>
+                        </div>
+                        <div style="padding: 0 0 15px 15px;">
+                            <div style="margin-bottom: 12px;">
+                                <p style="margin: 0 0 6px 0; display: flex; align-items: flex-start;"><span style="color: var(--primary); margin-right: 10px; font-size: 1.2em;">•</span> Provided expert product guidance and managed sales operations for outdoor gear and apparel.</p>
+                            </div>
+                            <div style="margin-bottom: 12px;">
+                                <p style="margin: 0 0 6px 0; display: flex; align-items: flex-start;"><span style="color: var(--primary); margin-right: 10px; font-size: 1.2em;">•</span> Built strong customer relationships resulting in increased repeat business and referrals.</p>
+                            </div>
+                            <div style="margin-bottom: 12px;">
+                                <p style="margin: 0 0 6px 0; display: flex; align-items: flex-start;"><span style="color: var(--primary); margin-right: 10px; font-size: 1.2em;">•</span> Developed expertise in outdoor equipment specifications and performance characteristics.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Infantry Team Leader (2014) -->
+                    <div class="detail-panel-content" id="experience-detail-2014" style="display: none;">
+                        <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                            <div style="width: 60px; height: 60px; overflow: hidden; border-radius: 50%; margin-right: 15px;">
+                                <img src="images/army.png" alt="US Army" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div>
+                                <h3 style="margin: 0; font-size: 1.4em;">Infantry Team Leader</h3>
+                                <h4 style="margin: 5px 0; color: var(--secondary); font-weight: 500;">US Army</h4>
+                                <p style="margin: 0; font-size: 0.9em; color: var(--gray-500);"><i class="fas fa-map-marker-alt"></i> Fort Carson, Colorado <span style="margin-left: 5px; padding: 2px 8px; background-color: rgba(101, 220, 155, 0.2); border-radius: 12px; font-size: 0.85em; color: #43a047;">2014-2017</span></p>
+                            </div>
+                        </div>
+                        <div style="padding: 0 0 15px 15px;">
+                            <div style="margin-bottom: 12px;">
+                                <p style="margin: 0 0 6px 0; display: flex; align-items: flex-start;"><span style="color: var(--primary); margin-right: 10px; font-size: 1.2em;">•</span> Led and trained soldiers, executed tactical missions, and maintained combat readiness.</p>
+                            </div>
+                            <div style="margin-bottom: 12px;">
+                                <p style="margin: 0 0 6px 0; display: flex; align-items: flex-start;"><span style="color: var(--primary); margin-right: 10px; font-size: 1.2em;">•</span> Managed equipment and resources valued at over $500,000.</p>
+                            </div>
+                            <div style="margin-bottom: 12px;">
+                                <p style="margin: 0 0 6px 0; display: flex; align-items: flex-start;"><span style="color: var(--primary); margin-right: 10px; font-size: 1.2em;">•</span> Developed leadership skills while coordinating multiple teams in complex operations.</p>
+                            </div>
+                            <div style="margin-bottom: 12px;">
+                                <p style="margin: 0 0 6px 0; display: flex; align-items: flex-start;"><span style="color: var(--primary); margin-right: 10px; font-size: 1.2em;">•</span> Promoted to senior leadership position in 2016 based on exceptional performance.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- Achievement Metrics Cards -->

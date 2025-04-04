@@ -3,80 +3,154 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize all visual storytelling components
-    initInteractiveTimeline();
+    initSimpleTimeline();
     initMetricsCards();
     initRelationshipDiagram();
 });
 
-// 1. INTERACTIVE TIMELINE
+// 1. SIMPLE TIMELINE
 // =================================================================
-function initInteractiveTimeline() {
-    const timelineTrack = document.querySelector('.timeline-track');
+function initSimpleTimeline() {
     const timelineNodes = document.querySelectorAll('.timeline-node');
     const prevBtn = document.getElementById('timelinePrev');
     const nextBtn = document.getElementById('timelineNext');
-    const detailPanels = document.querySelectorAll('.detail-panel-content');
+    const timelineContainer = document.querySelector('.timeline-container');
+    const infoCard = document.querySelector('.info-card');
     
-    if (!timelineTrack || timelineNodes.length === 0) return;
+    if (!timelineContainer || timelineNodes.length === 0) return;
     
-    // Start with the most recent position (last node in the timeline)
-    let currentNodeIndex = timelineNodes.length - 1;
-    const nodeWidth = 300; // Width of node + margins
+    // Ensure 2025 node is active by default
+    const node2025 = document.getElementById('node-2025');
     
-    // Remove any existing active classes first
-    timelineNodes.forEach(node => {
-        node.classList.remove('active');
+    // Timeline data with years
+    const nodeYears = ['2017', '2019', '2021', '2023', '2025'];
+    let currentNodeIndex = 4; // Default to 2025 (last position)
+    
+    // Add touch swipe functionality for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    timelineContainer.addEventListener('touchstart', e => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, {passive: true});
+    
+    timelineContainer.addEventListener('touchend', e => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    }, {passive: true});
+    
+    function handleSwipe() {
+        const swipeThreshold = 50; // Minimum distance required for a swipe
+        if (touchEndX < touchStartX - swipeThreshold) {
+            // Swipe left - go to next (newer) item
+            if (currentNodeIndex < nodeYears.length - 1) {
+                currentNodeIndex++;
+                activateNode(nodeYears[currentNodeIndex]);
+            }
+        } else if (touchEndX > touchStartX + swipeThreshold) {
+            // Swipe right - go to previous (older) item
+            if (currentNodeIndex > 0) {
+                currentNodeIndex--;
+                activateNode(nodeYears[currentNodeIndex]);
+            }
+        }
+    }
+    
+    // For keyboard navigation
+    document.addEventListener('keydown', e => {
+        if (e.key === 'ArrowLeft') {
+            if (currentNodeIndex > 0) {
+                currentNodeIndex--;
+                activateNode(nodeYears[currentNodeIndex]);
+            }
+        } else if (e.key === 'ArrowRight') {
+            if (currentNodeIndex < nodeYears.length - 1) {
+                currentNodeIndex++;
+                activateNode(nodeYears[currentNodeIndex]);
+            }
+        }
     });
-    
-    // Set initial active node to the most recent (last) one
-    timelineNodes[currentNodeIndex].classList.add('active');
-    
-    // Calculate the initial position to center the most recent node
-    const initialPosition = -(currentNodeIndex * nodeWidth) + (window.innerWidth / 2 - nodeWidth / 2);
-    timelineTrack.style.transform = `translateX(${initialPosition}px)`;
-    
-    // Update navigation buttons and detail panel
-    updateNavigationButtons();
-    updateDetailPanel();
     
     // Event listeners for navigation buttons
     prevBtn.addEventListener('click', function() {
         if (currentNodeIndex > 0) {
             currentNodeIndex--;
-            updateTimeline();
+            activateNode(nodeYears[currentNodeIndex]);
         }
     });
     
     nextBtn.addEventListener('click', function() {
-        if (currentNodeIndex < timelineNodes.length - 1) {
+        if (currentNodeIndex < nodeYears.length - 1) {
             currentNodeIndex++;
-            updateTimeline();
+            activateNode(nodeYears[currentNodeIndex]);
         }
     });
     
-    // Add click events to each node
-    timelineNodes.forEach((node, index) => {
+    // Initialize with 2025 active
+    activateNode('2025');
+    
+    // Event listeners for node clicks
+    timelineNodes.forEach((node) => {
         node.addEventListener('click', function() {
-            currentNodeIndex = index;
-            updateTimeline();
+            const year = node.id.split('-')[1];
+            activateNode(year);
         });
     });
     
-    function updateTimeline() {
+    // Function to activate a node and update the info card
+    function activateNode(year) {
+        // Find the index of the year
+        const index = nodeYears.indexOf(year);
+        if (index === -1) return;
+        
+        // Update current index
+        currentNodeIndex = index;
+        
         // Remove active class from all nodes
         timelineNodes.forEach(node => node.classList.remove('active'));
         
-        // Add active class to current node
-        timelineNodes[currentNodeIndex].classList.add('active');
+        // Add active class to selected node
+        const activeNode = document.getElementById(`node-${year}`);
+        if (activeNode) activeNode.classList.add('active');
         
-        // Calculate track position
-        const trackPosition = -(currentNodeIndex * nodeWidth) + (window.innerWidth / 2 - nodeWidth / 2);
-        timelineTrack.style.transform = `translateX(${trackPosition}px)`;
+        // Update info card content
+        updateInfoCard(year);
         
-        // Update navigation buttons and detail panel
+        // Update navigation buttons
         updateNavigationButtons();
-        updateDetailPanel();
     }
+    
+    // Define the function to update the info card content
+    function updateInfoCard(year) {
+        // Get content from hidden elements
+        const contentElement = document.getElementById(`content-${year}`);
+        if (!contentElement) return;
+        
+        // Update the info card with content from the hidden element
+        const title = contentElement.querySelector('h3').textContent;
+        const subtitle = contentElement.querySelector('h4').textContent;
+        const description = contentElement.querySelector('p').textContent;
+        
+        // Update the visible info card
+        infoCard.querySelector('.info-card-title').textContent = title;
+        infoCard.querySelector('.info-card-subtitle').textContent = subtitle;
+        infoCard.querySelector('.info-card-description').textContent = description;
+        
+        // Update card ID
+        infoCard.id = `card-${year}`;
+    }
+    
+    function updateNavigationButtons() {
+        // Disable previous button if we're at the first node
+        prevBtn.disabled = currentNodeIndex === 0;
+        // Disable next button if we're at the last node
+        nextBtn.disabled = currentNodeIndex === nodeYears.length - 1;
+    }
+    
+    // Handle window resize for responsive design
+    window.addEventListener('resize', function() {
+        // No repositioning needed as we're using percentage-based positioning in CSS
+    });
     
     function updateNavigationButtons() {
         prevBtn.disabled = currentNodeIndex === 0;
@@ -86,9 +160,18 @@ function initInteractiveTimeline() {
     function updateDetailPanel() {
         if (!detailPanels || detailPanels.length === 0) return;
         
-        // Hide all detail panels first
+        // Hide all detail panels first with a smooth transition
         detailPanels.forEach(panel => {
-            panel.style.display = 'none';
+            if (panel.style.display !== 'none') {
+                panel.style.opacity = '0';
+                panel.style.transform = 'translateY(10px)';
+                setTimeout(() => {
+                    panel.style.display = 'none';
+                }, 300); // Match the transition duration
+            } else {
+                panel.style.display = 'none';
+                panel.style.opacity = '0';
+            }
         });
         
         // Get the year from the active node
@@ -102,47 +185,87 @@ function initInteractiveTimeline() {
         let targetPanelId = `experience-detail-${nodeYear}`;
         let targetPanel = document.getElementById(targetPanelId);
         
-        // If no exact match, find the closest period based on year ranges
+        // If no exact match, find the specific panel based on year
         if (!targetPanel) {
-            // Default to the most recent experience panel
+            // Default to the 2025 experience panel if nothing else matches
             targetPanel = document.getElementById('experience-detail-2025');
             
             const yearNum = parseInt(nodeYear);
-            // Map year ranges to specific experience panels
-            if (yearNum >= 2014 && yearNum <= 2017) {
+            // Map years to specific experience panels
+            if (yearNum === 2014 || yearNum === 2016) {
                 targetPanel = document.getElementById('experience-detail-2014');
-            } else if (yearNum >= 2017 && yearNum <= 2019) {
+            } else if (yearNum === 2017) {
                 targetPanel = document.getElementById('experience-detail-2017');
-            } else if (yearNum >= 2019) {
+            } else if (yearNum === 2019) {
+                targetPanel = document.getElementById('experience-detail-2019'); 
+            } else if (yearNum === 2021) {
+                targetPanel = document.getElementById('experience-detail-2021');
+            } else if (yearNum === 2023) {
+                targetPanel = document.getElementById('experience-detail-2023');
+            } else if (yearNum === 2025) {
                 targetPanel = document.getElementById('experience-detail-2025');
+            }
+        }
+        
+        // If still no match found, use the 2025 panel as default
+        if (!targetPanel) {
+            targetPanel = document.getElementById('experience-detail-2025');
+            // If even that doesn't exist, use the first panel
+            if (!targetPanel && detailPanels.length > 0) {
+                targetPanel = detailPanels[0];
             }
         }
         
         // Display the target panel with a smooth animation
         if (targetPanel) {
-            targetPanel.style.display = 'block';
-            
-            // Apply subtle animation effect
-            targetPanel.style.opacity = '0';
-            targetPanel.style.transform = 'translateY(10px)';
-            targetPanel.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-            
+            // Short delay to allow previous panel to fade out
             setTimeout(() => {
+                targetPanel.style.display = 'block';
+                targetPanel.style.transform = 'translateY(10px)';
+                targetPanel.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+                
+                // Force a reflow to ensure the animation happens
+                void targetPanel.offsetWidth;
+                
                 targetPanel.style.opacity = '1';
                 targetPanel.style.transform = 'translateY(0)';
-            }, 50);
+            }, 350);
         }
     }
     
     // Handle window resize
     window.addEventListener('resize', function() {
-        const trackPosition = -(currentNodeIndex * nodeWidth) + (window.innerWidth / 2 - nodeWidth / 2);
+        // Recalculate node width based on new screen size
+        let nodeWidth = 300; // Default for desktop
+        if (window.innerWidth <= 576) {
+            nodeWidth = 200; // Smaller width for mobile phones
+        } else if (window.innerWidth <= 992) {
+            nodeWidth = 250; // Medium width for tablets
+        }
+        
+        // Recenter the current node after resize
+        const trackPosition = calculateCenteredPosition(currentNodeIndex, nodeWidth);
         timelineTrack.style.transform = `translateX(${trackPosition}px)`;
     });
     
-    // Force the initial state to most recent item
+    // Force the initial state to the 2025 node
     setTimeout(() => {
         updateTimeline();
+        
+        // Make sure the 2025 experience detail panel is showing
+        const panel2025 = document.getElementById('experience-detail-2025');
+        if (panel2025) {
+            detailPanels.forEach(panel => {
+                panel.style.display = 'none';
+                panel.style.opacity = '0';
+            });
+            
+            panel2025.style.display = 'block';
+            setTimeout(() => {
+                panel2025.style.opacity = '1';
+                panel2025.style.transform = 'translateY(0)';
+            }, 50);
+        }
     }, 100);
 }
 
